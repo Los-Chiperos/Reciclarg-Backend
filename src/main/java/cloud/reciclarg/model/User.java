@@ -28,6 +28,7 @@ public class User {
     private String nombre;
     private String apellido;
     private String username;
+    private String email;
     private String password;
     private Date alta;
     private Date baja;

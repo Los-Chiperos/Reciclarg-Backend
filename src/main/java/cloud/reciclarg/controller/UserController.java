@@ -16,7 +16,7 @@ public class UserController {
     public IUserService userService;
 
     @PostMapping("/login")
-    public User getUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public User getUser(@RequestParam("username") String username, @RequestParam("password") String password) throws Exception {
 
         User user = userService.buscarUserByName(username);
 
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("/newuser")
-    public String NuevoUsuario(User user) {
+    public String NuevoUsuario(User user) throws Exception {
         //Fatan verificar que los parametros de User no vengan vacios
         User U = userService.buscarUserByName(user.getUsername());
         if (U == null) {
